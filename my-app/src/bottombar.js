@@ -6,7 +6,7 @@ import { useNavigate, Link } from 'react-router-dom';
 const Bottombar = () => {
     return (
         <Bottom>
-            <Text>This is made by me, Ian whtie, if you are impressed please contact me at ianwhite355@gmail.com or click the linkedIn icon on the top right</Text>
+            <Text>If you were impressed by this website please consider cotacting me, my information is in the contact in the header</Text>
 
         </Bottom>
     )

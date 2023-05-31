@@ -28,9 +28,9 @@ export const Header = () => {
                 <Headertext>Ian White</Headertext>
                 
                 <MiddleHeader>
-                    <HomeLink to="/" active={location.pathname === "/" ? "true" : undefined}>Home</HomeLink>
-                    <AboutLink to="/about"  active={location.pathname === "/about" ? "true" : undefined}>About</AboutLink>
-                    <ContactLink to="/contact"  active={location.pathname === "/contact" ? "true" : undefined}>Contact</ContactLink>
+                    <HomeLink to="/">Home</HomeLink>
+                    <AboutLink to="/about">About</AboutLink>
+                    <ContactLink to="/contact">Contact</ContactLink>
                 </MiddleHeader>
 
                 <div>
@@ -68,21 +68,6 @@ const MiddleHeader = styled.div`
         cursor: pointer;
     }
 `
-
-// const Home = styled.h1`
-
-// `
-
-// const About = styled.h1`
-//     padding-left: 40px;
-
-// `
-
-// const Contact = styled.h1`
-//     padding-left: 40px;
-
-// `
-
 
 const HomeLink = styled(Link)`
     padding: 25px;
