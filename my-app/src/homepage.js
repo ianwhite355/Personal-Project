@@ -11,25 +11,6 @@ export const HomePage = () => {
     return (
         <Background>
             <Title>Full Stack Developer</Title>
-            <Languages>Skills</Languages>
-            <Skills>
-                <FrontEnd>
-                    {frontEndData.map((user) => (
-                            <FrontEndName key={user.id} image={user.image}> {user.name}</FrontEndName>
-                    ))}
-                </FrontEnd>
-                <BackEnd>
-                    {backEndData.map((user) => (
-                            <BackEndName key={user.id} image={user.image}> {user.name}</BackEndName>
-                    ))}
-                </BackEnd>
-                <OtherSkill>
-                    {otherSkills.map((user) => (
-                            <OtherSkillsName key={user.id} image={user.image}> {user.name}</OtherSkillsName>
-                    ))}
-                </OtherSkill>
-            </Skills>
-
             <MyProjects>
                 <MyText>My projects</MyText>
                 <Project>
@@ -39,7 +20,7 @@ export const HomePage = () => {
                         <ProjectName>{user.name}</ProjectName>
                         <ProjectStatus>{user.status}</ProjectStatus>
                         <Link to={user.github} target="blank">
-                            <GitHub>Click for the Github Repository</GitHub>
+                            <GitHub>Click for the Github Repo</GitHub>
                         </Link>
                         <Link to={user.active} target="blank">
                             <Active>Click here for the active website</Active>
@@ -66,103 +47,18 @@ const Background = styled.div`
     background-position: center;
 `
 
-const Skills = styled.div`
-    display:flex;
-    justify-content: space-between;
-    color: white;
-    font-weight: bold;
-    padding: 50px;
-`
-
-const FrontEnd = styled.ul`
-    margin-right:50px;
-    background-color: #494D5F;
-    width: 20%;
-    height: 250px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-`
-
-const FrontEndName = styled.li`
-    font-size: 1.5em;
-    list-style-type: none;
-    padding: 10px;
-    background-image: url(${props => props.image});
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: 30px 30px;
-    padding-left: 40px;
-    line-height: 1.5;
-
-    &:hover {
-    cursor: pointer;
-    }
-`;
-
-const BackEnd = styled.ul`
-    background-color: #494D5F;
-    width: 20%;
-    height: 250px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-`
-
-const BackEndName = styled.li`
-    font-size: 1.5em;
-    list-style-type: none;
-    padding: 10px;
-    background-image: url(${props => props.image});
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: 30px 30px;
-    padding-left: 40px;
-    line-height: 1.5;
-
-    &:hover {
-    cursor: pointer;
-    }
-`;
-
-const OtherSkill = styled.ul`
-    background-color: #494D5F;
-    width: 20%;
-    height: 250px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-`
-
-const OtherSkillsName = styled.li`
-    font-size: 1.5em;
-    list-style-type: none;
-    padding: 10px;
-    background-image: url(${props => props.image});
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: 50px 50px;
-    padding-left: 40px;
-    line-height: 1.5;
-
-    &:hover {
-    cursor: pointer;
-    }
-`;
-
-
 
 const Title = styled.p`
     font-size:3em;
     text-align: center;
     color: white;
     font-weight: bold;
-
+    position: relative;
+    bottom: 10px;
 `
 
-const Languages = styled.p`
-    text-align: center;
-    font-size:2em;
-    color: white;
-    font-weight: bold;
-`
 
 const MyProjects = styled.div`
-    /* display: block; */
     align-items: center;
     height: 100%;
     
@@ -170,6 +66,8 @@ const MyProjects = styled.div`
 `
 
 const MyText = styled.p`
+    position: relative;
+    bottom:40px;
     text-align:center;
     color: white;
     font-size: 2em;
@@ -180,21 +78,22 @@ const Project = styled.div`
     display: flex;
     flex-wrap: wrap;
     position: absolute;
-    top: 80%;
+    top: 58%;
     left: 50%;
     transform:translate(-50%,-50%);
     color: white;
     background-color: #494D5F;
+    width: 80%;
 `
 
 const ADiv = styled.div`
     position: relative;
-    margin:10px;
+    margin:15px;
 `;
 
 const ProjectImg = styled.img`
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
     object-fit: cover;
     opacity: 1;
     transition: opacity 0.3s ease;
@@ -204,9 +103,10 @@ const ProjectImg = styled.img`
 `;
 
 const ProjectName = styled.p`
+    width: 100%;
     font-weight: bold;
     position: absolute;
-    top: 30%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
@@ -221,6 +121,7 @@ const ProjectName = styled.p`
 const ProjectStatus = styled.p`
     font-weight: bold;
     position: absolute;
+    width: 100%;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -235,6 +136,7 @@ const ProjectStatus = styled.p`
 
 
 const GitHub = styled.p`
+    width: 100%;
     color: white;
     font-weight: bold;
     position: absolute;
@@ -251,6 +153,7 @@ const GitHub = styled.p`
 `
 
 const Active = styled.p`
+    width: 100%;
     color: white;
     font-weight: bold;
     position: absolute;
