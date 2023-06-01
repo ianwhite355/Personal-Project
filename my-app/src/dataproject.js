@@ -1,6 +1,8 @@
 import FindAProimg from "./images/logo.jpg"
 import GameScreenshot from "./images/gamescreenshot.jpg"
 import Randomlogo from "./images/randomlogo.JPEG"
+import IanWhite from "./images/ianwhite.png"
+
 
 export const projectData = [
     {
@@ -8,7 +10,7 @@ export const projectData = [
         name: 'Space Game',
         image: GameScreenshot,
         status: 'Status: Active',
-        github: "https://github.com/ianwhite355/Space-Shooter",
+        github: "https://github.com/ianwhite355/Space-Game",
         active: "",
     },
 
@@ -22,11 +24,11 @@ export const projectData = [
     },
 
     {
-        id: 'tempone',
-        name: 'tempone - this is just to fill in',
-        image: Randomlogo,
-        status: 'Status: Coming soon',
-        github: "https://github.com/ianwhite355",
+        id: 'personalwebsite',
+        name: 'Personal Website',
+        image: IanWhite,
+        status: 'Status: Active',
+        github: "https://github.com/ianwhite355/Personal-Project",
         active: "",
     },
 

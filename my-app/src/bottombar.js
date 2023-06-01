@@ -16,12 +16,14 @@ const Bottombar = () => {
 
 const Bottom = styled.footer`
     overflow: hidden;
-    background-color: #494D5F;
-    height: 100px;
+    background-color: rgba(73, 77, 95, 0.8);
+    height: 75px;
     margin: 0;
 `
 
 const Text = styled.h3`
+    position: relative;
+    bottom: 10px;
     padding:0px;
     font-size: 1.8em;
     color: white;

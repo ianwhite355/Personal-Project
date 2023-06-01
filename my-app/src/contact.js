@@ -1,4 +1,6 @@
 import styled from "styled-components"
+import BackgroundImage from "./images/backgroundimg.webp";
+
 
 const Contact = () => {
     return (
@@ -12,9 +14,22 @@ const Contact = () => {
 }
 
 const Container = styled.div`
+    display: block;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 1000px;
+    background-image: url(${BackgroundImage});
+    object-fit:cover;
+    background-size: cover;
+    background-position: center;
+    color:white;
 `
 
 const Title = styled.h1`
+    font-size:3em;
+    text-align: center;
 
 `
 

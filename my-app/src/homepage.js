@@ -2,51 +2,69 @@ import React, { useState, useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import BackgroundImage from "./images/backgroundimg.webp";
-import { projectData } from './dataproject';
-import { frontEndData } from './datalang';
-import { backEndData } from './datalang';
-import { otherSkills } from './datalang';
+import { frontEndData } from './dataskills';
+import { backEndData } from './dataskills';
+import { otherSkills } from './dataskills';
 
-export const HomePage = () => {
+const HomePage = () => {
     return (
-        <Background>
+        <Container>
             <Title>Full Stack Developer</Title>
-            <MyProjects>
-                <MyText>My projects</MyText>
-                <Project>
-                {projectData.map((user) => (
-                    <ADiv key={user.id}>
-                        <ProjectImg src={user.image} alt={user.name} />
-                        <ProjectName>{user.name}</ProjectName>
-                        <ProjectStatus>{user.status}</ProjectStatus>
-                        <Link to={user.github} target="blank">
-                            <GitHub>Click for the Github Repo</GitHub>
-                        </Link>
-                        <Link to={user.active} target="blank">
-                            <Active>Click here for the active website</Active>
-                        </Link>
+            <Introduction>
+                <MyImage>I will add a photo shortly, taking updated photos soon.</MyImage>
+                <IntroText>
+                    <h1>About me</h1>
+                    <p>some future text here</p>
 
-                    </ADiv>
-                ))}
-                </Project>
-            </MyProjects>
-        </Background>
+                </IntroText>
+            </Introduction>
+
+            <Languages>Skills</Languages>
+            <Skills>
+                <FrontDiv>
+                    <FrontEndTitle>Front-End</FrontEndTitle>
+                    <FrontEnd>
+                        {frontEndData.map((user) => (
+                            <FrontEndName key={user.id} image={user.image}> {user.name}</FrontEndName>
+                        ))}
+                    </FrontEnd>
+                </FrontDiv>
+
+                <BackDiv>
+                    <BackEndTitle>Back-End</BackEndTitle>
+                    <BackEnd>
+                        {backEndData.map((user) => (
+                            <BackEndName key={user.id} image={user.image}> {user.name}</BackEndName>
+                        ))}
+                    </BackEnd>
+                </BackDiv>
+
+                <OtherDiv>
+                    <OtherTitle>Other Skills</OtherTitle>
+                    <OtherSkill>
+                        {otherSkills.map((user) => (
+                            <OtherSkillsName key={user.id} image={user.image}> {user.name}</OtherSkillsName>
+                        ))}
+                    </OtherSkill>
+                </OtherDiv>
+            </Skills>
+
+        </Container>
     )
-
 }
 
-const Background = styled.div`
+const Container = styled.div`
+    display: block;
     overflow: hidden;
     position: relative;
     top: 0;
     bottom: 0;
-    height: 1000px;
+    /* height: 1000px; */
     background-image: url(${BackgroundImage});
     object-fit:cover;
     background-size: cover;
     background-position: center;
 `
-
 
 const Title = styled.p`
     font-size:3em;
@@ -57,117 +75,149 @@ const Title = styled.p`
     bottom: 10px;
 `
 
-
-const MyProjects = styled.div`
-    align-items: center;
-    height: 100%;
-    
-
-`
-
-const MyText = styled.p`
-    position: relative;
-    bottom:40px;
-    text-align:center;
+const Introduction = styled.div`
+    display:flex;
     color: white;
-    font-size: 2em;
-    font-weight: bold;
+
 `
 
-const Project = styled.div`
-    display: flex;
-    flex-wrap: wrap;
+const MyImage = styled.p`
+    /* soon to be an image here */
+    margin:200px;
+`
+
+const IntroText = styled.div`
+    transform: translate(-50%);
     position: absolute;
-    top: 58%;
     left: 50%;
-    transform:translate(-50%,-50%);
+`
+
+
+const Skills = styled.div`
+    display:flex;
+    justify-content: space-around;
     color: white;
+    font-weight: bold;
+    padding: 50px;
+    position: relative;
+    bottom: 100px;
+`
+
+const FrontDiv = styled.div`
+    display:inline-block;
+`
+
+const FrontEnd = styled.ul`
     background-color: #494D5F;
-    width: 80%;
+    width: 300px;
+    height: 250px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 `
 
-const ADiv = styled.div`
+const FrontEndTitle = styled.h3`
+    text-align: center;
+    font-size:2em;
+    background-color: rgba(73, 77, 95, 0.7);
+    width: 200px;
+    margin: 0 auto;
+`
+
+const FrontEndName = styled.li`
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 10px;
+    background-image: url(${props => props.image});
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 30px 30px;
+    padding-left: 40px;
+    line-height: 1.5;
+
+    &:hover {
+    cursor: pointer;
+    }
+`;
+
+const BackDiv = styled.div`
+    display:inline-block;
+`
+
+
+const BackEnd = styled.ul`
+    background-color: #494D5F;
+    width: 300px;
+    height: 250px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+`
+
+const BackEndTitle = styled.h3`
+    text-align: center;
+    font-size:2em;
+    background-color: rgba(73, 77, 95, 0.7);
+    width: 200px;
+    margin: 0 auto;
+`
+
+const BackEndName = styled.li`
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 10px;
+    background-image: url(${props => props.image});
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 30px 30px;
+    padding-left: 40px;
+    line-height: 1.5;
+
+    &:hover {
+    cursor: pointer;
+    }
+`
+
+const OtherDiv = styled.div`
+    display:inline-block;
+`
+
+const OtherSkill = styled.ul`
+    background-color: #494D5F;
+    width: 300px;
+    height: 250px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+`
+
+const OtherTitle = styled.h3`
+    text-align: center;
+    font-size:2em;
+    background-color: rgba(73, 77, 95, 0.7);
+    width: 200px;
+    margin: 0 auto;
+`
+
+const OtherSkillsName = styled.li`
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 10px;
+    background-image: url(${props => props.image});
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 50px 50px;
+    padding-left: 40px;
+    line-height: 1.5;
+
+    &:hover {
+    cursor: pointer;
+    }
+`;
+
+
+
+const Languages = styled.p`
+    text-align: center;
+    font-size:2em;
+    color: white;
+    font-weight: bold;
     position: relative;
-    margin:15px;
-`;
-
-const ProjectImg = styled.img`
-    width: 350px;
-    height: 350px;
-    object-fit: cover;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-    ${ADiv}:hover & {
-        opacity: 0.5;
-    }
-`;
-
-const ProjectName = styled.p`
-    width: 100%;
-    font-weight: bold;
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    text-align: center;
-    z-index: 1;
-    ${ADiv}:hover & {
-    opacity: 1;
-    }
-`;
-
-const ProjectStatus = styled.p`
-    font-weight: bold;
-    position: absolute;
-    width: 100%;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    text-align: center;
-    z-index: 1;
-    ${ADiv}:hover & {
-    opacity: 1;
-    }
-`;
-
-
-const GitHub = styled.p`
-    width: 100%;
-    color: white;
-    font-weight: bold;
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    text-align: center;
-    z-index: 1;
-    ${ADiv}:hover & {
-    opacity: 1;
-    }
-`
-
-const Active = styled.p`
-    width: 100%;
-    color: white;
-    font-weight: bold;
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    text-align: center;
-    z-index: 1;
-    ${ADiv}:hover & {
-    opacity: 1;
-    }
-
+    bottom:100px;
 `
 
 

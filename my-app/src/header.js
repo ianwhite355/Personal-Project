@@ -6,20 +6,7 @@ import LinkedIn from "./images/linkedIn.png";
 
 export const Header = () => {
 
-    const navigate = useNavigate()
     const location = useLocation()
-
-    const handleHome = () => {
-        navigate("/")
-    }
-
-    const handleAbout = () => {
-        navigate("/about")
-    }
-
-    const handleContact = () => {
-        navigate("/contact")
-    }
 
 
     return (
@@ -28,8 +15,8 @@ export const Header = () => {
                 <Headertext>Ian White</Headertext>
                 
                 <MiddleHeader>
-                    <HomeLink to="/">Home</HomeLink>
-                    <AboutLink to="/about">About</AboutLink>
+                    <AboutLink to="/">Home</AboutLink>
+                    <HomeLink to="/projects">My projects</HomeLink>
                     <ContactLink to="/contact">Contact</ContactLink>
                 </MiddleHeader>
 
@@ -49,11 +36,11 @@ const Heading = styled.div`
     position:relative;
     top:0%;
     color:white;
-    font-size: 1.2em;
-    background-color: #494D5F;
+    font-size: 1em;
+    background-color: rgba(73, 77, 95, 0.8);
     display: flex;
     justify-content: space-between;
-    height: 100px;
+    height: 75px;
 `
 
 
@@ -70,7 +57,7 @@ const MiddleHeader = styled.div`
 `
 
 const HomeLink = styled(Link)`
-    padding: 25px;
+    padding: 20px;
     text-decoration: none;
     color: white;
     font-size: 1.8em;
@@ -96,7 +83,7 @@ const HomeLink = styled(Link)`
 `;
 
 const AboutLink = styled(Link)`
-    padding: 25px;
+    padding: 20px;
     text-decoration: none;
     color: white;
     font-size: 1.8em;
@@ -122,7 +109,7 @@ const AboutLink = styled(Link)`
 `;
 
 const ContactLink = styled(Link)`
-    padding: 25px;
+    padding: 20px;
     text-decoration: none;
     color: white;
     font-size: 1.8em;
@@ -148,6 +135,8 @@ const ContactLink = styled(Link)`
 `;
 
 const Headertext = styled.h1`
+position: relative;
+bottom: 5px;
     padding-left: 25px;
     color: white;
 `
@@ -155,8 +144,8 @@ const Headertext = styled.h1`
 const HeaderLogo = styled.img`
     padding-right: 25px;
     position:relative;
-    top: 20px;
-    width:75px;
+    top: 10px;
+    width:60px;
     height:auto;
 `
 
