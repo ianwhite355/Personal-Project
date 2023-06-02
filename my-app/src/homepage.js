@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import BackgroundImage from "./images/backgroundimg.webp";
 import { frontEndData } from './dataskills';
 import { backEndData } from './dataskills';
@@ -11,10 +10,15 @@ const HomePage = () => {
         <Container>
             <Title>Full Stack Developer</Title>
             <Introduction>
-                <MyImage>I will add a photo shortly, taking updated photos soon.</MyImage>
+                <MyImage>I will add a photo shortly,<br></br>taking updated photos soon.</MyImage>
                 <IntroText>
                     <h1>About me</h1>
-                    <p>some future text here</p>
+                    <p>
+                        Introducing me, Ian White, a talented full-stack developer with a passion for creating innovative web solutions.
+                        With a creative mindset and expertise in various programming languages, I craft user-friendly applications
+                        that deliver seamless experiences. Collaborative and detail-oriented, I excels at turning ideas into reality,
+                        ensuring client satisfaction every step of the way. I will add some bullet points in the following once I know what to add really.
+                    </p>
 
                 </IntroText>
             </Introduction>
@@ -66,13 +70,11 @@ const Container = styled.div`
     background-position: center;
 `
 
-const Title = styled.p`
+const Title = styled.h3`
     font-size:3em;
     text-align: center;
     color: white;
     font-weight: bold;
-    position: relative;
-    bottom: 10px;
 `
 
 const Introduction = styled.div`
@@ -84,12 +86,16 @@ const Introduction = styled.div`
 const MyImage = styled.p`
     /* soon to be an image here */
     margin:200px;
+    
 `
 
 const IntroText = styled.div`
     transform: translate(-50%);
     position: absolute;
     left: 50%;
+    top:250px;
+    background-color: rgba(73, 77, 95, 0.8);
+    padding: 15px;
 `
 
 

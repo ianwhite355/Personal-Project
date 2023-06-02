@@ -1,12 +1,11 @@
 
-import React, { useState, useContext, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { useNavigate, Link } from 'react-router-dom';
 
 const Bottombar = () => {
     return (
         <Bottom>
-            <Text>If you were impressed by this website please consider cotacting me, my information is in the contact in the header</Text>
+            <Text>This website is temporary, I will to fix things like the about page and the contact so itlooks good, and contact page so it links to my contacts</Text>
 
         </Bottom>
     )

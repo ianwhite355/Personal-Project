@@ -11,7 +11,7 @@ export const projectData = [
         image: GameScreenshot,
         status: 'Status: Active',
         github: "https://github.com/ianwhite355/Space-Game",
-        active: "",
+        active: "https://space-game-ivory.vercel.app/",
     },
 
     {
