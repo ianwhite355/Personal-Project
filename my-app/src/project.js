@@ -71,7 +71,36 @@ const MyText = styled.p`
 `
 
 const Projects = styled.div`
-    display: flex;
+    display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 15px;
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
+  background-color: rgba(73, 77, 95, 0.9);
+  width: 80%;
+
+  @media (max-width: 1600px) {
+    width: 90%;
+    grid-gap: 10px;
+  }
+
+  @media (max-width: 1200px) {
+    width: 95%;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 8px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-gap: 6px;
+  }
+    
+    
+    /* display: flex;
     flex-wrap: wrap;
     position: absolute;
     top: 58%;
@@ -80,7 +109,7 @@ const Projects = styled.div`
     color: white;
     background-color: rgba(73, 77, 95, 0.9);
     width: 80%;
-    border-radius: 15px;
+    border-radius: 15px; */
 `
 
 const ADiv = styled.div`
