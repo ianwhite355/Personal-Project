@@ -72,31 +72,31 @@ const MyText = styled.p`
 
 const Projects = styled.div`
     display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+  grid-gap: 2vw;
   position: absolute;
-  top: 58%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
   color: white;
   background-color: rgba(73, 77, 95, 0.9);
   width: 80%;
 
-  @media (max-width: 1600px) {
+  @media (max-width: 1920px) {
     width: 90%;
-    grid-gap: 10px;
+    grid-gap: 1.6vw;
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1440px) {
     width: 95%;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 8px;
+    grid-template-columns: repeat(auto-fit, minmax(15%, 1fr));
+    grid-gap: 1.2vw;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    grid-gap: 6px;
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+    grid-gap: 0.8vw;
   }
     
     
