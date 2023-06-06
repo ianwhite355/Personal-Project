@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import styled from 'styled-components';
-import BackgroundImage from "./images/backgroundimg.webp";
+import BackgroundImage from "./images/backgroundimg.png";
 import { frontEndData } from './dataskills';
 import { backEndData } from './dataskills';
 import { otherSkills } from './dataskills';
@@ -25,6 +25,7 @@ const HomePage = () => {
 
             <Languages>Skills</Languages>
             <Skills>
+
                 <FrontDiv>
                     <FrontEndTitle>Front-End</FrontEndTitle>
                     <FrontEnd>
@@ -96,7 +97,9 @@ const IntroText = styled.div`
     top:250px;
     background-color: rgba(73, 77, 95, 0.8);
     padding: 15px;
+    border-radius: 15px;
 `
+
 
 
 const Skills = styled.div`
@@ -118,6 +121,7 @@ const FrontEnd = styled.ul`
     width: 300px;
     height: 250px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 15px;
 `
 
 const FrontEndTitle = styled.h3`
@@ -126,6 +130,7 @@ const FrontEndTitle = styled.h3`
     background-color: rgba(73, 77, 95, 0.7);
     width: 200px;
     margin: 0 auto;
+    border-radius: 10px;
 `
 
 const FrontEndName = styled.li`
@@ -154,6 +159,7 @@ const BackEnd = styled.ul`
     width: 300px;
     height: 250px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 15px;
 `
 
 const BackEndTitle = styled.h3`
@@ -162,6 +168,7 @@ const BackEndTitle = styled.h3`
     background-color: rgba(73, 77, 95, 0.7);
     width: 200px;
     margin: 0 auto;
+    border-radius: 10px;
 `
 
 const BackEndName = styled.li`
@@ -189,6 +196,7 @@ const OtherSkill = styled.ul`
     width: 300px;
     height: 250px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 15px;
 `
 
 const OtherTitle = styled.h3`
@@ -197,6 +205,7 @@ const OtherTitle = styled.h3`
     background-color: rgba(73, 77, 95, 0.7);
     width: 200px;
     margin: 0 auto;
+    border-radius: 10px;
 `
 
 const OtherSkillsName = styled.li`

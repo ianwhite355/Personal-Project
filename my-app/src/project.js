@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import BackgroundImage from "./images/backgroundimg.webp";
+import BackgroundImage from "./images/backgroundimg.png";
 import { projectData } from './dataproject';
 
 const Project = () => {
@@ -80,6 +80,7 @@ const Projects = styled.div`
     color: white;
     background-color: rgba(73, 77, 95, 0.9);
     width: 80%;
+    border-radius: 15px;
 `
 
 const ADiv = styled.div`
@@ -88,6 +89,7 @@ const ADiv = styled.div`
 `;
 
 const ProjectImg = styled.img`
+    border-radius: 15px;
     width: 350px;
     height: 350px;
     object-fit: cover;

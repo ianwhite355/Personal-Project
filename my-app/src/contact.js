@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import BackgroundImage from "./images/backgroundimg.webp";
+import BackgroundImage from "./images/backgroundimg.png";
 
 
 const Contact = () => {
