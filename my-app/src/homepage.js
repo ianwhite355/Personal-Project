@@ -4,13 +4,14 @@ import BackgroundImage from "./images/backgroundimg.png";
 import { frontEndData } from './dataskills';
 import { backEndData } from './dataskills';
 import { otherSkills } from './dataskills';
+import mySelf from "./images/myself.jpg"
 
 const HomePage = () => {
     return (
         <Container>
             <Title>Full Stack Developer</Title>
             <Introduction>
-                <MyImage>I will add a photo shortly,<br></br>taking updated photos soon.</MyImage>
+                <MyImage src={mySelf}/>
                 <IntroText>
                     <h1>About me</h1>
                     <p>
@@ -84,9 +85,11 @@ const Introduction = styled.div`
 
 `
 
-const MyImage = styled.p`
-    /* soon to be an image here */
+const MyImage = styled.img`
     margin:200px;
+    width: 10%;
+    height: auto;
+
     
 `
 
