@@ -41,6 +41,9 @@ const Background = styled.div`
     object-fit:cover;
     background-size: cover;
     background-position: center;
+    @media (min-width: 1922px) and (max-width: 2560px) {
+        height: 1300px;
+    }
 `
 
 
@@ -74,19 +77,21 @@ const Projects = styled.div`
     display: flex;
     flex-wrap: wrap;
     position: absolute;
-    top: 58%;
+    top: 56%;
     left: 50%;
     transform:translate(-50%,-50%);
     color: white;
     background-color: rgba(73, 77, 95, 0.9);
     width: 80%;
     border-radius: 15px;
+    justify-content: center;
 `
 
 const ADiv = styled.div`
     position: relative;
     margin:15px;
 `;
+
 
 const ProjectImg = styled.img`
     border-radius: 15px;
@@ -95,19 +100,41 @@ const ProjectImg = styled.img`
     object-fit: cover;
     opacity: 1;
     transition: opacity 0.3s ease;
+
+    @media (min-width: 1922px) and (max-width: 2565px) {
+        width: 475px;
+        height: 475px;
+    }
+
     ${ADiv}:hover & {
         opacity: 0.5;
     }
-    @media (max-width: 1080px) {
-        width: 100%;
-        height: 100%;
-    }
-
-    @media (max-width: 1440px) {
-        width: 110%;
-        height: 110%;
-    }
 `;
+
+// const ProjectImg = styled.img`
+//     /* /* border-radius: 15px;
+//     width: 350px;
+//     height: 350px;
+//     object-fit: cover;
+//     opacity: 1;
+//     transition: opacity 0.3s ease; */
+//     border-radius: 15px;
+//     width: 350px;
+//     height: 350px; /* Default width */
+//     object-fit: cover;
+//     opacity: 1;
+//     transition: opacity 0.3s ease;
+
+//     @media (min-width: 1922) and (max-width: 2561px) {
+
+//         width: 475px;
+//         height: 475px;
+//     }
+
+//     ${ADiv}:hover & {
+//         opacity: 0.5;
+//     }
+// `;
 
 const ProjectName = styled.p`
     background-color: rgba(73, 77, 95, 0.8);
