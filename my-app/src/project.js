@@ -98,6 +98,15 @@ const ProjectImg = styled.img`
     ${ADiv}:hover & {
         opacity: 0.5;
     }
+    @media (max-width: 1080px) {
+        width: 100%;
+        height: 100%;
+    }
+
+    @media (max-width: 1440px) {
+        width: 110%;
+        height: 110%;
+    }
 `;
 
 const ProjectName = styled.p`
