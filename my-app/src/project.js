@@ -42,7 +42,7 @@ const Background = styled.div`
     background-size: cover;
     background-position: center;
     @media (min-width: 1922px) and (max-width: 2560px) {
-        height: 1300px;
+        height: 1365px;
     }
 `
 
@@ -54,13 +54,16 @@ const Title = styled.p`
     font-weight: bold;
     position: relative;
     bottom: 10px;
+    @media (min-width: 1922px) and (max-width: 2560px) {
+        font-size: 4em;
+    }
 `
 
 
 const MyProjects = styled.div`
     align-items: center;
     height: 100%;
-    
+
 
 `
 
@@ -85,6 +88,9 @@ const Projects = styled.div`
     width: 80%;
     border-radius: 15px;
     justify-content: center;
+    @media (min-width: 1922px) and (max-width: 2560px) {
+        width: 85%;
+    }
 `
 
 const ADiv = styled.div`
@@ -102,8 +108,8 @@ const ProjectImg = styled.img`
     transition: opacity 0.3s ease;
 
     @media (min-width: 1922px) and (max-width: 2565px) {
-        width: 475px;
-        height: 475px;
+        width: 514px;
+        height: 514px;
     }
 
     ${ADiv}:hover & {
@@ -111,30 +117,6 @@ const ProjectImg = styled.img`
     }
 `;
 
-// const ProjectImg = styled.img`
-//     /* /* border-radius: 15px;
-//     width: 350px;
-//     height: 350px;
-//     object-fit: cover;
-//     opacity: 1;
-//     transition: opacity 0.3s ease; */
-//     border-radius: 15px;
-//     width: 350px;
-//     height: 350px; /* Default width */
-//     object-fit: cover;
-//     opacity: 1;
-//     transition: opacity 0.3s ease;
-
-//     @media (min-width: 1922) and (max-width: 2561px) {
-
-//         width: 475px;
-//         height: 475px;
-//     }
-
-//     ${ADiv}:hover & {
-//         opacity: 0.5;
-//     }
-// `;
 
 const ProjectName = styled.p`
     background-color: rgba(73, 77, 95, 0.8);

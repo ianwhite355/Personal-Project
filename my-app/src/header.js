@@ -17,7 +17,6 @@ export const Header = () => {
                 <MiddleHeader>
                     <AboutLink to="/">Home</AboutLink>
                     <HomeLink to="/projects">My projects</HomeLink>
-                    <ContactLink to="/contact">Contact</ContactLink>
                 </MiddleHeader>
 
                 <div>
@@ -41,6 +40,10 @@ const Heading = styled.div`
     display: flex;
     justify-content: space-between;
     height: 75px;
+
+    @media (min-width:200px) and (max-width:900) {
+        
+    }
 `
 
 
@@ -80,6 +83,8 @@ const HomeLink = styled(Link)`
     &:hover::before {
     transform: scaleX(1);
     }
+
+
 `;
 
 const AboutLink = styled(Link)`
@@ -108,35 +113,10 @@ const AboutLink = styled(Link)`
     }
 `;
 
-const ContactLink = styled(Link)`
-    padding: 20px;
-    text-decoration: none;
-    color: white;
-    font-size: 1.8em;
-    font-weight: bold;
-    position: relative;
-
-    &::before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 2px;
-    bottom: 20px;
-    left: 0;
-    background-color: white;
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-    }
-
-    &:hover::before {
-    transform: scaleX(1);
-    }
-`;
 
 const Headertext = styled.h1`
-position: relative;
-bottom: 5px;
+    position: relative;
+    bottom: 5px;
     padding-left: 25px;
     color: white;
 `

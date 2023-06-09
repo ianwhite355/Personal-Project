@@ -1,12 +1,52 @@
-import React, { useState, useContext, useEffect } from 'react';
-import styled from 'styled-components';
+import React, { useState, useContext, useEffect, useRef } from 'react';
+import styled, { keyframes} from 'styled-components';
 import BackgroundImage from "./images/backgroundimg.png";
 import { frontEndData } from './dataskills';
 import { backEndData } from './dataskills';
 import { otherSkills } from './dataskills';
 import mySelf from "./images/myself.jpg"
+import emailjs from '@emailjs/browser';
+
+
+
+
+const progressBarAnimation = keyframes`
+    0% { transform: scaleX(1); }
+    100% { transform: scaleX(0); }
+`;
 
 const HomePage = () => {
+
+
+    const form = useRef();
+    const [successMessage, setSuccessMessage] = useState("");
+    const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
+    useEffect(() => {
+        let timer;
+        if (showSuccessMessage) {
+            timer = setTimeout(() => {
+            setShowSuccessMessage(false);
+            }, 5000);
+        }
+
+        return () => clearTimeout(timer);
+    }, [showSuccessMessage]);
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_f2jwoos', 'template_sj5nnmo', form.current, 'EEwDD0w5lZNfVQ4V3')
+        .then((result) => {
+            console.log(result.text);
+            setSuccessMessage("Message sent");
+            setShowSuccessMessage(true);
+        })
+        .catch((error) => {
+            console.log(error.text);
+        });
+    };
+
     return (
         <Container>
             <Title>Full Stack Developer</Title>
@@ -51,27 +91,50 @@ const HomePage = () => {
                     </OtherSkill>
                 </OtherDiv>
             </Skills>
+                
+                <FormEmail ref={form} onSubmit={sendEmail}>
+                    <EmailTitle>Send me an Email!</EmailTitle>
+                    <FormName>Your Name</FormName>
+                    <FormInput type="text" name="user_name" />
+                    <FormMail>Your Email</FormMail>
+                    <FormInput type="email" name="user_email" />
+                    <FormMessage>What would you like to say?</FormMessage>
+                    <FormTextarea name="message" />
+                    <FormButton type="submit">Send</FormButton>
+                </FormEmail>
+
+                <SuccessContainer>
+                    {showSuccessMessage && (
+                        <SuccessWrapper>
+                            <SuccessMessage>{successMessage}</SuccessMessage>
+                            <ProgressBar />
+                        </SuccessWrapper>
+                    )}
+                </SuccessContainer>
+            
 
         </Container>
     )
 }
 
+
 const Container = styled.div`
     display: block;
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
     top: 0;
     bottom: 0;
-    height: 1100px;
+    height: auto;
     background-image: url(${BackgroundImage});
-    object-fit:cover;
+    object-fit: cover;
     background-size: cover;
     background-position: center;
 
     @media (min-width: 1922px) and (max-width: 2560px) {
-        height: 1290px;
+        
     }
-`
+`;
+
 
 const Title = styled.h3`
     font-size:4em;
@@ -120,6 +183,10 @@ const IntroText = styled.p`
     padding: 15px;
     border-radius: 15px;
     font-size:1.2em;
+    
+    @media (min-width: 200px) and (max-width: 700px) {
+        width: 80%;
+    }
 `
 
 
@@ -299,6 +366,98 @@ const Languages = styled.p`
         bottom:325px;
     }
 `
+
+const FormEmail = styled.form`
+    color: white;
+    position: absolute;
+    left: 50%;
+    bottom: 80px;
+    transform: translate(-50%);
+    display: flex;
+    flex-direction: column;
+    width:400px;
+`
+
+const EmailTitle = styled.h3`
+    font-size: 2em;
+    margin: 10px;
+
+`
+
+const FormName = styled.label`
+`;
+
+const FormMail = styled.label`
+`
+
+const FormInput = styled.input`
+    margin-bottom: 10px;
+    padding: 8px;
+`
+
+
+const FormMessage = styled.label`
+`
+
+const FormTextarea = styled.textarea`
+    margin-bottom: 10px;
+    padding: 8px;
+`
+
+
+
+
+const FormButton = styled.button`
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #45a049;
+    }
+`
+
+const SuccessContainer = styled.div`
+    position: fixed;
+    top: 20px;
+    right: 50px;
+`;
+
+const SuccessWrapper = styled.div`
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    background-color: #4caf50;
+
+    border-radius: 5px;
+`;
+
+const SuccessMessage = styled.div`
+    color: white;
+    /* transform: translateX(100%); */
+    padding: 20px;
+    font-size:1.5em;
+`;
+
+const ProgressBar = styled.div`
+    position: relative;
+    bottom: 0px;
+    width: 200px;
+    height: 10px;
+    background-color: #2E1A47;
+    animation: ${progressBarAnimation} 5s linear forwards;
+    transform-origin: left;
+    transform: translate(-100%);
+    transform: scaleX(1);
+    border-radius: 5px;
+`;
+
+
+
 
 
 
